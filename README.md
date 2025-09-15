@@ -1,6 +1,6 @@
 # GalleryCell - Hotspot Login Portal
 
-## 📝 Deskripsi
+##  Deskripsi
 
 ini adalah implementasi halaman login *captive portal* untuk hotspot Wi-Fi.
 
