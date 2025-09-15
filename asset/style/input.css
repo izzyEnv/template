@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@theme {
+      --animate-float-cloud1: floatCloud1 10s ease-in-out infinite;
+  --animate-float-cloud2: floatCloud2 12s ease-in-out infinite;
+  --animate-float-cloud3: floatCloud3 14s ease-in-out infinite;
+
+  @keyframes floatCloud1 {
+    0% { transform: translate(0px, 0px); }
+    25% { transform: translate(6px, 4px); }
+    50% { transform: translate(-6px, 5px); }
+    75% { transform: translate(4px, -3px); }
+    100% { transform: translate(0px, 0px); }
+  }
+  @keyframes floatCloud2 {
+    0% { transform: translate(0px, 0px); }
+    25% { transform: translate(-5px, 3px); }
+    50% { transform: translate(5px, -4px); }
+    75% { transform: translate(-4px, 4px); }
+    100% { transform: translate(0px, 0px); }
+  }
+  @keyframes floatCloud3 {
+    0% { transform: translate(0px, 0px); }
+    25% { transform: translate(5px, -5px); }
+    50% { transform: translate(-5px, 6px); }
+    75% { transform: translate(3px, 3px); }
+    100% { transform: translate(0px, 0px); }
+  }
+}
+

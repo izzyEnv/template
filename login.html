@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#06f" />
+    <!-- Link ke CSS -->
+    <link rel="stylesheet" href="asset/style/output.css" />
+    <title>Hotspot Login</title>
+  </head>
+
+  <body class="overflow-hidden bg-sky-200">
+    <!-- form mikrotik -->
+    $(if chap-id)
+    <form
+      name="sendin"
+      action="$(link-login-only)"
+      method="post"
+      style="display: none"
+    >
+      <input type="hidden" name="username" />
+      <input type="hidden" name="password" />
+      <input type="hidden" name="dst" value="$(link-orig)" />
+      <input type="hidden" name="popup" value="true" />
+    </form>
+    $(endif)
+
+    <header
+      class="relative h-60 max-w-128 overflow-hidden sm:mx-auto sm:w-full"
+    >
+      <!-- Gradient Background -->
+      <div
+        class="absolute inset-0 rounded-2xl bg-gradient-to-r from-sky-300 via-sky-500 to-cyan-500"
+      ></div>
+
+      <!-- Gallery Cell Title -->
+      <span class="absolute top-4 left-1/2 -translate-x-1/2 text-2xl font-bold text-white font-serif mt-4">Gallery Cell</span>
+
+      <!-- Awan Glow -->
+      <div class="pointer-events-none absolute inset-0">
+        <!-- Awan 1 -->
+        <span
+          class="absolute top-4 left-4 h-10 w-20 animate-float-cloud1 rounded-full bg-white/20 shadow-[0_0_12px_rgba(255,255,255,0.2)]"
+        ></span>
+        <!-- Awan 2 -->
+        <span
+          class="absolute top-8 left-32 h-8 w-16 animate-float-cloud2 rounded-full bg-white/15 shadow-[0_0_10px_rgba(255,255,255,0.18)]"
+        ></span>
+        <!-- Awan 3 -->
+        <span
+          class="absolute top-14 left-56 h-6 w-12 animate-float-cloud3 rounded-full bg-white/18 shadow-[0_0_8px_rgba(255,255,255,0.18)]"
+        ></span>
+        <!-- Awan 4 -->
+        <span
+          class="absolute top-12 right-8 h-12 w-24 animate-float-cloud1 rounded-full bg-white/20 shadow-[0_0_14px_rgba(255,255,255,0.22)]"
+        ></span>
+        <!-- Awan 5 -->
+        <span
+          class="absolute top-6 right-28 h-9 w-18 animate-float-cloud2 rounded-full bg-white/16 shadow-[0_0_10px_rgba(255,255,255,0.18)]"
+        ></span>
+        <!-- Awan 6 -->
+        <span
+          class="absolute top-16 right-48 h-7 w-14 animate-float-cloud3 rounded-full bg-white/14 shadow-[0_0_9px_rgba(255,255,255,0.17)]"
+        ></span>
+
+        <!-- Awan 7 -->
+        <span
+          class="absolute bottom-6 left-4 h-11 w-22 animate-float-cloud1 rounded-full bg-white/20 shadow-[0_0_13px_rgba(255,255,255,0.21)]"
+        ></span>
+        <!-- Awan 8 -->
+        <span
+          class="absolute bottom-10 left-24 h-8 w-16 animate-float-cloud2 rounded-full bg-white/18 shadow-[0_0_10px_rgba(255,255,255,0.18)]"
+        ></span>
+        <!-- Awan 9 -->
+        <span
+          class="absolute bottom-8 left-1/2 h-10 w-20 animate-float-cloud3 rounded-full bg-white/15 shadow-[0_0_12px_rgba(255,255,255,0.2)]"
+        ></span>
+        <!-- Awan 10 -->
+        <span
+          class="absolute right-12 bottom-4 h-9 w-18 animate-float-cloud1 rounded-full bg-white/17 shadow-[0_0_10px_rgba(255,255,255,0.2)]"
+        ></span>
+        <!-- Awan 11 -->
+        <span
+          class="absolute right-32 bottom-12 h-7 w-14 animate-float-cloud2 rounded-full bg-white/14 shadow-[0_0_8px_rgba(255,255,255,0.18)]"
+        ></span>
+        <!-- Awan 12 -->
+        <span
+          class="absolute right-56 bottom-10 h-6 w-12 animate-float-cloud3 rounded-full bg-white/13 shadow-[0_0_7px_rgba(255,255,255,0.15)]"
+        ></span>
+      </div>
+
+      <!-- Teks "Silahkan Login terlebih dahulu" di dalam header -->
+      <div class="absolute right-0 bottom-0 left-0 flex justify-center pb-4">
+        <p class="font-serif text-xl font-semibold text-white text-center">
+         Silakan login <br> untuk terhubung ke internet
+        </p>
+      </div>
+    </header>
+
+    <div class="container mx-auto max-w-xl sm:px-6">
+      <!-- Section Tab Radio terpisah -->
+      <section class="mt-17">
+        <div
+          class="mb-6 flex w-full -translate-y-18 flex-col items-center text-xl lg:mx-auto lg:w-128"
+        >
+          <div class="flex w-full justify-center">
+            <div class="flex translate-y-8 gap-12">
+              <input
+                type="radio"
+                id="tab-voucher"
+                name="tab"
+                value="voucher"
+                class="peer/voucher hidden"
+                checked
+              />
+              <label
+                for="tab-voucher"
+                class="w-36 cursor-pointer rounded-lg  bg-cyan-300/80 px-6 py-3 text-center font-serif font-bold text-white transition-all duration-300 peer-checked/voucher:scale-105 peer-checked/voucher:bg-sky-600 peer-checked/voucher:text-white peer-checked/voucher:shadow-lg hover:scale-102 hover:bg-sky-400 hover:text-white"
+              >
+                Voucher
+              </label>
+              <input
+                type="radio"
+                id="tab-member"
+                name="tab"
+                value="member"
+                class="peer/member hidden"
+               
+              />
+              <label
+                for="tab-member"
+                class="w-36 cursor-pointer rounded-lg  bg-cyan-300/80 px-6 py-3 text-center font-serif font-bold text-white transition-all duration-300 peer-checked/member:scale-105 peer-checked/member:bg-sky-600 peer-checked/member:text-white peer-checked/member:shadow-lg hover:scale-102 hover:bg-sky-400 hover:text-white"
+              >
+                Member
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- form login -->
+      <div
+        class="flex min-h-72 w-full -translate-y-10 flex-col justify-start rounded-xl bg-gradient-to-br from-sky-300 via-sky-500 to-sky-300 bg-contain p-5 px-20 pb-35 lg:mx-auto lg:w-128 lg:py-20 xl:min-h-82"
+      >
+        <!-- form login -->
+        <div
+          id="form-login"
+          class="mx-auto w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl"
+        >
+          <form
+            id="form-member"
+            name="login"
+            action="$(link-login-only)"
+            method="post"
+            class="flex w-full flex-col items-center space-y-4 sm:space-y-5 lg:space-y-6"
+            style="display: none"
+            $(if chap-id)
+            onSubmit="return doLogin(this)"
+            $(endif)
+          >
+            <input type="hidden" name="dst" value="$(link-orig)" />
+            <input type="hidden" name="popup" value="true" />
+            <div class="mb-3 w-full rounded-xl bg-cyan-300 sm:mb-4 lg:mb-5">
+              <label for="username" class="sr-only">Username</label>
+              <div class="relative">
+                <span
+                  class="absolute inset-y-0 left-0 flex items-center pl-2 text-redline sm:pl-3 lg:pl-4"
+                >
+                  <!-- Heroicon User -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 text-white sm:h-6 sm:w-6 lg:h-7 lg:w-7"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M18 8a6 6 0 11-12 0 6 6 0 0112 0zm-6 9c-4.418 0-8 1.79-8 4v1h16v-1c0-2.21-3.582-4-8-4z"
+                    />
+                  </svg>
+                </span>
+                <input
+                  id="username"
+                  name="username"
+                  type="text"
+                  placeholder="Username"
+                  required
+                  autocomplete="username"
+                  autocapitalize="off"
+                  autocorrect="off"
+                  spellcheck="false"
+                  class="w-full rounded-lg bg-transparent py-2 pr-3 pl-8 text-sm text-black transition-colors placeholder:text-black/50 focus:outline-none focus:ring-2 focus:ring-white/70 sm:rounded-xl sm:py-3 sm:pr-4 sm:pl-10 sm:text-base lg:rounded-2xl lg:py-4 lg:pr-5 lg:pl-12 lg:text-lg"
+                />
+              </div>
+            </div>
+            <div
+              id="input-password"
+              class="mb-4 w-full rounded-xl bg-cyan-300 sm:mb-5 lg:mb-6"
+            >
+              <label for="password" class="sr-only">Password</label>
+              <div class="relative">
+                <span
+                  class="absolute inset-y-0 left-0 flex items-center pl-2 text-redline sm:pl-3 lg:pl-4"
+                >
+                  <!-- Heroicon Lock -->
+                  <svg
+                    class="h-[20px] w-[20px] fill-current text-white sm:h-[25px] sm:w-[25px] lg:h-[28px] lg:w-[28px]"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 10V7a4 4 0 1 1 8 0v3h1a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h1Zm2-3a2 2 0 1 1 4 0v3h-4V7Zm2 6a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0v-3a1 1 0 0 1 1-1Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  required
+                  placeholder="Password"
+                  autocomplete="current-password"
+                  class="w-full rounded-lg  bg-transparent py-2 pr-12 pl-8 text-sm text-black transition-colors placeholder:text-black/50  focus:outline-none focus:ring-2 focus:ring-white/70sm:rounded-xl sm:py-3 sm:pr-14 sm:pl-10 sm:text-base lg:rounded-2xl lg:py-4 lg:pr-16 lg:pl-12 lg:text-lg"
+                />
+
+                <!-- Eye Icon for Password Toggle -->
+                <button
+                  type="button"
+                  id="togglePassword"
+                  class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-600 transition-colors hover:text-gray-400 sm:pr-4 lg:pr-5"
+                >
+                  <!-- Eye Open Icon (when password is hidden) -->
+                  <svg
+                    id="eyeOpen"
+                    class="h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    ></path>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                    ></path>
+                  </svg>
+                  <!-- Eye Slash Icon (when password is visible) -->
+                  <svg
+                    id="eyeSlash"
+                    class="hidden h-5 w-5 sm:h-6 sm:w-6 lg:h-7 lg:w-7"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            $(if error)
+            <p class="error text-sm sm:text-base lg:text-lg">$(error)</p>
+            $(endif)
+            <button
+              type="submit"
+              class="w-full rounded-lg  bg-cyan-300 py-2 text-sm font-semibold text-slate-600 shadow-lg transition-all hover:bg-cyan-300/80 sm:rounded-xl sm:py-3 sm:text-base lg:rounded-2xl lg:py-4 lg:text-lg"
+            >
+              Login
+            </button>
+          </form>
+          <!-- Form Voucher -->
+          <form
+            id="form-voucher"
+            name="voucher"
+            action="$(link-login-only)"
+            method="post"
+            class="flex w-full flex-col items-center space-y-4 sm:space-y-5 lg:space-y-6"
+            style="display: block"
+            $(if chap-id)
+            onSubmit="return doLogin(this)"
+            $(endif)
+          >
+            <input type="hidden" name="dst" value="$(link-orig)" />
+            <input type="hidden" name="popup" value="true" />
+            <div class="mb-4 w-full rounded-xl bg-cyan-300 sm:mb-5 lg:mb-6">
+              <label for="voucher" class="sr-only">Voucher</label>
+              <div class="relative">
+                <span
+                  class="absolute inset-y-0 left-0 flex items-center pl-2 text-redline sm:pl-3 lg:pl-4"
+                >
+                  <!-- Heroicon User -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 text-white sm:h-6 sm:w-6 lg:h-7 lg:w-7"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M18 8a6 6 0 11-12 0 6 6 0 0112 0zm-6 9c-4.418 0-8 1.79-8 4v1h16v-1c0-2.21-3.582-4-8-4z"
+                    />
+                  </svg>
+                </span>
+                <input
+                  id="voucher"
+                  name="username"
+                  type="text"
+                  placeholder="Voucher"
+                  required
+                  autocomplete="username"
+                  autocapitalize="off"
+                  autocorrect="off"
+                  spellcheck="false"
+                  class="w-full rounded-lg bg-transparent py-2 pr-3 pl-8 text-sm text-slate-700 transition-colors placeholder:text-black/50 placeholder:text-center focus:outline-none focus:ring-2 focus:ring-white/70 sm:rounded-xl sm:py-3 sm:pr-4 sm:pl-10 sm:text-base lg:rounded-2xl lg:py-4 lg:pr-5 lg:pl-12 lg:text-lg"
+                />
+
+                <input type="hidden" name="password" id="voucher-password" />
+              </div>
+            </div>
+            $(if error)
+            <p class="error text-sm sm:text-base lg:text-lg">$(error)</p>
+            $(endif)
+            <button
+              type="submit"
+              class="w-full rounded-lg bg-cyan-300 py-2 text-sm font-semibold text-slate-600 shadow-lg transition-all hover:bg-cyan-300/80 sm:rounded-xl sm:py-3 sm:text-base lg:rounded-2xl lg:py-4 lg:text-lg"
+            >
+              Login
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="/asset/lib/md5.js"></script>
+    <script src="/asset/js/login.js"></script>
+
+    <script>
+      // Sinkron password voucher dengan input username voucher saat non-CHAP
+      (function () {
+        let voucherInput = document.getElementById("voucher");
+        let voucherPass = document.getElementById("voucher-password");
+        if (voucherInput && voucherPass) {
+          voucherInput.addEventListener("input", function () {
+            voucherPass.value = voucherInput.value;
+          });
+        }
+      })();
+
+      // doLogin untuk CHAP
+      function doLogin(form) {
+        const checkedTab = document.querySelector(
+          'input[type="radio"][name="tab"]:checked',
+        );
+        const tabValue = checkedTab ? checkedTab.value : "member";
+        const username = form.username.value;
+        let password = form.password.value;
+        if (tabValue === "voucher") {
+          password = username;
+          const hiddenPass = document.getElementById("voucher-password");
+          if (hiddenPass) hiddenPass.value = password;
+        }
+        document.sendin.username.value = username;
+        document.sendin.password.value = hexMD5(
+          "$(chap-id)" + password + "$(chap-challenge)",
+        );
+        document.sendin.submit();
+        return false;
+      }
+
+      // Password Toggle Functionality
+      (function () {
+        const togglePassword = document.getElementById("togglePassword");
+        const passwordInput = document.getElementById("password");
+        const eyeOpen = document.getElementById("eyeOpen");
+        const eyeSlash = document.getElementById("eyeSlash");
+
+        if (togglePassword && passwordInput && eyeOpen && eyeSlash) {
+          togglePassword.addEventListener("click", function () {
+            // Toggle password visibility
+            const type =
+              passwordInput.getAttribute("type") === "password"
+                ? "text"
+                : "password";
+            passwordInput.setAttribute("type", type);
+
+            // Toggle icon visibility
+            if (type === "text") {
+              eyeOpen.classList.add("hidden");
+              eyeSlash.classList.remove("hidden");
+            } else {
+              eyeOpen.classList.remove("hidden");
+              eyeSlash.classList.add("hidden");
+            }
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

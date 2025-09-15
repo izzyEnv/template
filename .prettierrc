@@ -1,0 +1,4 @@
+{
+  "tailwindStylesheet": "./asset/style/input.css",
+  "plugins": ["prettier-plugin-tailwindcss"]
+}

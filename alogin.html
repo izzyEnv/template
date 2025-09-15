@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="2; url=$(link-redirect)" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#06f" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="/asset/style/output.css" />
+    <title>Redirect | Hotspot</title>
+    <script>
+      function startClock() {
+        $(if popup = 'true')
+          open('$(link-status)', 'hotspot_status', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=290,height=200');
+        $(endif)
+          location.href = '$(link-status)';
+      }
+    </script>
+  </head>
+  <body onload="startClock()">
+    <div class="min-h-screen flex items-center justify-center bg-white py-4 px-1">
+      <div class="w-full max-w-md mx-auto rounded-xl shadow-xl bg-gradient-to-br from-cyan-400 via-sky-400 to-cyan-400 p-4 md:p-6 relative animate-fadein">
+        <div class="mb-4 text-center">
+          <h1 class="text-2xl md:text-3xl font-extrabold text-white drop-shadow-lg mb-2">Berhasil Terhubung!</h1>
+          <p class="text-white/90 font-medium mb-6 text-center">Anda akan diarahkan secara otomatis.<br>Jika belum, <a href="./login" class="text-shadow-white text-lg font-bold underline  transition">klik di sini</a></p>
+        </div>
+        <div class="flex justify-center">
+          <div class="relative h-20 w-20">
+            <div class="absolute -inset-3 rounded-full bg-gradient-to-r from-cyan-400/20 via-fuchsia-400/20 to-sky-400/20 blur-xl"></div>
+            <div class="absolute inset-0 rounded-full border-[6px] border-white/20"></div>
+            <div class="absolute inset-0 rounded-full border-[6px] border-t-transparent border-r-cyan-400 border-b-sky-400 border-l-cyan-300 animate-spin"></div>
+            <div class="absolute inset-2 rounded-full border-[4px] border-t-transparent border-r-indigo-400 border-b-cyan-300 border-l-sky-400 animate-[spin_1.6s_linear_infinite_reverse]"></div>
+            <div class="absolute inset-[38%] rounded-full bg-gradient-to-br from-cyan-400 to-sky-400 animate-ping"></div>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
