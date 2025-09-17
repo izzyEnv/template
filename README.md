@@ -2,13 +2,14 @@
 
 ##  Deskripsi
 
-ini adalah implementasi halaman login *captive portal* untuk hotspot Wi-Fi.
+ini adalah modifikasi halaman login mikrotik untuk hotspot Wi-Fi.
 
 ## ✨ Fitur
 
--   Halaman login untuk pengguna.
+-   Halaman login untuk member/username dan password.
+-   Halaman login untuk voucher/username saja
 
--   Desain responsif dengan Tailwind CSS.
+-   Desain responsi
 
 
 
